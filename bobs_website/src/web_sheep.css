@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Josefin+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Rambla&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+body {
+  background-color: rgb(134, 223, 218);
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10%;
+}
+a {
+  color: darkred;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+#logout {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: "Quicksand", sans-serif;
+}
+#logo {
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+}
+#title {
+  font-size: 350%;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-skip-ink: none;
+  margin-bottom: -10px;
+}
+.heading {
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+}
+#subtitle {
+  text-align: center;
+  font-family: "Rambla", sans-serif;
+  font-size: 120%;
+}
+.main {
+  text-align: center;
+  font-family: "Quicksand", sans-serif;
+  font-size: 120%;
+}
+input {
+  margin: 5px;
+}
+.flash {
+  margin: 0px;
+  font-family: "Quicksand", sans-serif;
+  text-decoration-line: underline;
+}
+#success {
+  color: green;
+  position: absolute;
+  top: 40px;
+  right: 15px;
+}
+#error {
+  color: red;
+  text-align: center;
+}
+.blog {
+  margin: 0px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  background-color: white;
+  overflow-wrap: break-word;
+}
+.blogHeading {
+  font-family: "Josefin Sans", sans-serif;
+  margin: 5px;
+  margin-bottom: 0px;
+  text-decoration-line: underline;
+}
+.blogDate {
+  font-family: "Quicksand", sans-serif;
+  margin: 5px;
+  margin-top: 0px;
+}
+.blogContent {
+  font-family: "Quicksand", sans-serif;
+  margin: 5px;
+  margin-top: 10px;
+  text-align: justify;
+}
+input[type="submit"] {
+  background-color: white;
+  cursor: pointer;
+  margin: 0px;
+  border-width: 2px;
+  padding: 5px;
+  font-family: "Quicksand", sans-serif;
+}
+.blueButton {
+  border-color: blue;
+}
+.greenButton {
+  border-color: green;
+}
+.deleteButton {
+  margin: 5px;
+  margin-top: 10px;
+}
+.redButton {
+  border-color: red;
+}
+#newPost {
+  margin: 0px;
+}
+#message {
+  font-family: "Quicksand", sans-serif;
+  font-size: 1em;
+  padding: 10px;
+  resize: vertical;
+  width: 81%;
+  height: 26em;
+}
+#heading {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 1.2em;
+  padding: 10px;
+  width: 80%;
+}
+#rememberMe {
+  font-size: small;
+  margin: 0px;
+  margin-bottom: 5px;
+}

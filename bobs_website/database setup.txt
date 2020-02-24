@@ -1,0 +1,51 @@
+//Query to create a 'sheep' database and grant access to localhost.
+
+CREATE DATABASE sheep DEFAULT CHARACTER SET utf8 ;
+GRANT ALL ON sheep.* TO 'user'@'localhost' IDENTIFIED BY 'pass';
+GRANT ALL ON sheep.* TO 'user'@'127.0.0.1' IDENTIFIED BY 'pass';
+
+
+//Use the 'sheep' database.
+
+USE sheep;
+
+
+//Query to create the 'users' table.
+
+CREATE TABLE users (
+  user_id INTEGER NOT NULL AUTO_INCREMENT,
+  name VARCHAR(128),
+  email VARCHAR(128),
+  password VARCHAR(128),
+  PRIMARY KEY(user_id),
+  INDEX(email),
+  INDEX(password)
+) ENGINE=InnoDB CHARSET=utf8;
+
+
+//Sample query to insert a user in the 'users' table.
+
+INSERT INTO users (name,email,password) VALUES ('Shaun','shaun@sheep.com','1a52e17fa899cf40fb04cfc42e6352f1');
+
+//Query to create the 'blog' table.
+
+CREATE TABLE blog (
+  entry_id INTEGER NOT NULL AUTO_INCREMENT,
+  user_id INTEGER,
+  heading VARCHAR(128),
+  message TEXT,
+  time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  FULLTEXT(heading, message),
+  PRIMARY KEY(entry_id),
+  CONSTRAINT entry_ibfk_1 FOREIGN KEY (user_id) REFERENCES users (user_id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB CHARSET=utf8;
+
+
+//Sample query to insert an entry to the blog.
+
+INSERT INTO blog (user_id,heading,message) VALUES (1,'Great','Hello World!');
+
+
+//Sample query for a full text search in natural language mode.
+
+SELECT * FROM blog WHERE MATCH(heading, message) AGAINST ('Anime' IN NATURAL LANGUAGE MODE);
